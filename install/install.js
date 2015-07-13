@@ -8,3 +8,48 @@ if(Meteor.isServer) {
     });
   }
 }
+
+if(Meteor.isServer){
+  Meteor.methods({
+    'installNext': function() {
+      var system = System.findOne();
+      if(system.status === 'install') {
+
+        if(system.installStep === 'splash') {
+          System.update(system, {$set: {installStep: 'createUser'}});
+          return;
+        }
+
+        if(system.installStep === 'createUser') {
+          if(Meteor.user() && !(Meteor.users.findOne({admin: true}))) {
+            Meteor.users.update(Meteor.user(), {$set: {admin: true}});
+            System.update(system, {$set: {installStep: 'form'}});
+          }
+          return;
+        }
+
+      } else return;
+    },
+    'initializeForum': function(title, description) {
+      var system = System.findOne();
+      if(Meteor.user().admin != true) {
+        throw new Meteor.Error("Must be admin.");
+      }
+      if((system.status != "install") && (system.installStep != "form")) {
+        throw new Meteor.Error("Method only available during install process.");
+      }
+      if(title === "") {
+        throw new Meteor.Error("Title may not be empty.");
+      }
+      if(description === "") {
+        throw new Meteor.Error("Description may not be empty.");
+      }
+      System.update(system, {$set: {
+        title: title,
+        description: description,
+        status: "live",
+        installStep: "done"
+      }});
+    }
+  });
+}
