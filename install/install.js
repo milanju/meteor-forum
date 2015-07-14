@@ -50,6 +50,14 @@ if(Meteor.isServer){
         status: "live",
         installStep: "done"
       }});
+
+      // Now initialize first sample Section, Forum & Thread.
+      var section = {
+        title: "Sample Section",
+        description: "This is a sample section."
+      }
+
+      var sectionId = Sections.insert(section);
     }
   });
 }
