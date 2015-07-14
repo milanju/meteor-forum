@@ -1,5 +1,10 @@
 <template name="home">
+  {{> loginButtons}}
   Home!<br>
   Title: {{title}}<br>
   Description: {{description}}
+
+  {{#each sections}}
+    {{title}}, {{description}}
+  {{/each}}
 </template>

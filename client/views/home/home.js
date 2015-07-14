@@ -8,5 +8,8 @@ Template.home.helpers({
     if(System.findOne()) {
       return System.findOne().description;
     }
+  },
+  sections: function() {
+    return Sections.find();
   }
 });
