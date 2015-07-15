@@ -1,0 +1,30 @@
+<template name="adminSections">
+  <h1>Manage Sections</h1>
+  {{> adminSectionsNew}}
+  <table>
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sections}}
+      <tr>
+        <td>
+          {{this.position}}
+          <button class="section-position-up">up</button>
+          <button class="section-position-down">down</button>
+        </td>
+        <td>{{this.title}}</td>
+        <td>{{this.description}}</td>
+        <td><button class="section-edit">Edit</button></td>
+        <td><button class="section-delete">Delete</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

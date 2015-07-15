@@ -1,0 +1,18 @@
+<template name="adminForumsEdit">
+  <h1>Edit Forum</h1>
+  <div>{{title}}, {{description}}</div>
+  <form id="forum-edit-form">
+    <select name="sectionSelect">
+      {{#each sections}}
+        {{#if currentSection ../sectionId}}
+          <option selected="true">{{title}}</option>
+        {{else}}
+          <option>{{title}}</option>
+        {{/if}}
+      {{/each}}
+    </select>
+    <input type="text" name="title" value="{{title}}">
+    <input type="text" name="description" value="{{title}}">
+    <button type="submit" name="button">Submit</button>
+  </form>
+</template>

@@ -11,5 +11,8 @@ Template.home.helpers({
   },
   sections: function() {
     return Sections.find();
+  },
+  forums: function(id) {
+    return Forums.find({sectionId: id});
   }
 });

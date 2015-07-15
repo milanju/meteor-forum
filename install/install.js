@@ -57,7 +57,17 @@ if(Meteor.isServer){
         description: "This is a sample section."
       }
 
-      var sectionId = Sections.insert(section);
+      Meteor.call("sectionInsert", section);
+
+      var sectionId = Sections.findOne()._id;
+
+      var forum = {
+        title: "Sample Forum",
+        description: "This is a sample forum.",
+        sectionId: sectionId
+      }
+
+      Meteor.call("forumInsert", forum);
     }
   });
 }

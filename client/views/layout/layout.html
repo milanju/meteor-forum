@@ -1,5 +1,8 @@
 <template name="layout">
   {{#if statusInstall}}
+    Meteor Forum has not been installed yet.
+  {{else}}
+    <h1>Meteor Forum</h1>
+    {{> yield}}
   {{/if}}
-  {{> yield}}
 </template>

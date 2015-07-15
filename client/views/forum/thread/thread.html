@@ -1,0 +1,10 @@
+<template name="thread">
+  <h3>{{title}}</h3>
+  {{#each posts}}
+    {{> post}}
+  {{/each}}
+  <form id="quickreply-form">
+    <textarea type="text" name="content"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</template>

@@ -5,6 +5,28 @@
   Description: {{description}}
 
   {{#each sections}}
-    {{this.title}}, {{this.description}}
+    <table>
+      <thead>
+        <tr>
+          <th>{{this.title}}</th>
+          <th>Threads</th>
+          <th>Posts</th>
+          <th>Last Post</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each forums this._id}}
+          <tr>
+            <td>
+              <a href="/forum/{{this._id}}">{{this.title}}</a><br>
+              {{this.description}}
+            </td>
+            <td>Threads</td>
+            <td>Posts</td>
+            <td>LastPost</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
   {{/each}}
 </template>

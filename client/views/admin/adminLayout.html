@@ -1,0 +1,12 @@
+<template name="adminLayout">
+  {{> loginButtons}}
+  {{#if isAdmin}}
+    Welcome admin!
+    <a href="/admin">Admin Home</a>
+    <a href="/admin/sections">Manage Sections</a>
+    <a href="/admin/forums">Manage Forums</a>
+    {{> yield}}
+  {{else}}
+    You must be an admin to access adminCP.
+  {{/if}}
+</template>

@@ -1,0 +1,32 @@
+<template name="adminForums">
+  <h1>Manage Forums</h1>
+  {{> adminForumsNew}}
+  {{#each sections}}
+    <table>
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>{{this.title}}</th>
+          <th>Description</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each forums this._id}}
+          <tr>
+            <td>
+              {{this.position}}
+              <button class="forum-position-up">up</button>
+              <button class="forum-position-down">down</button>
+            </td>
+            <td>{{this.title}}</td>
+            <td>{{this.description}}</td>
+            <td><button class="forum-edit">Edit</button></td>
+            <td><button class="forum-delete">Delete</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/each}}
+</template>

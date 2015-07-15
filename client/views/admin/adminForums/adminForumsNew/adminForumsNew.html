@@ -1,0 +1,12 @@
+<template name="adminForumsNew">
+  <form id="new-forum-form">
+    <select name="newForumSelect" id="new-forum-select">
+      {{#each sections}}
+        <option>{{this.title}}</option>
+      {{/each}}
+    </select>
+    <input type="text" name="newForumTitle" placeholder="forum title">
+    <input type="text" name="newForumDescription" placeholder="forum description">
+    <button type="submit">submit</button>
+  </form>
+</template>

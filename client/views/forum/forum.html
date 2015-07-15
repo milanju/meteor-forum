@@ -1,0 +1,7 @@
+<template name="forum">
+  <h1>{{title}}</h1>
+  <button class="new-thread">New Thread</button>
+  {{#each threads}}
+    <a href="/forum/{{../_id}}/{{this._id}}">{{this.title}}</a>
+  {{/each}}
+</template>
