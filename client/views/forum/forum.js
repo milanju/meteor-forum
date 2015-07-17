@@ -1,6 +1,6 @@
 Template.forum.helpers({
   threads: function() {
-    return Threads.find({forumId: this._id});
+    return Threads.find({forumId: this._id}, {sort: {date: -1}});
   }
 });
 

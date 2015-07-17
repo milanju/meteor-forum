@@ -5,8 +5,10 @@ Template.threadNew.events({
     var content = event.target.content.value;
 
     if(forumId != "" && title != "" && content != "") {
-      Meteor.call('threadInsert', {forumId: forumId, title: title, content: content});
-      Router.go('/forum/' + this._id);
+      Meteor.call('threadInsert', {forumId: forumId, title: title, content: content}, function(error, result) {
+        var threadId = result;
+        Router.go('/forum/' + forumId + '/' + threadId);
+      });
     }
     return false;
   }

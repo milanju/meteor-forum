@@ -2,7 +2,25 @@
   {{#if statusInstall}}
     Meteor Forum has not been installed yet.
   {{else}}
-    <h1>Meteor Forum</h1>
-    {{> yield}}
+    <body>
+      <div class="container">
+        <nav class="grey darken-4" role="navigation">
+          <a id="logo-container" href="/" class="brand-logo grey-text text-lighten-1">{{system.title}}</a>
+          <!--<ul class="right hide-on-med-and-down">
+            <li><a href="#">Navbar Link</a></li>
+          </ul>
+
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Navbar Link</a></li>
+          </ul>-->
+        </nav>
+        <div class="card">
+          <div class="forum-container">
+            <div>{{> loginButtons}}</div>
+            {{> yield}}
+          </div>
+        </div>
+      </div>
+    </body>
   {{/if}}
 </template>

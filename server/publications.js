@@ -6,6 +6,9 @@ Meteor.publish('sections', function() {
   return Sections.find();
 });
 
+Meteor.publish('users', function() {
+  return Meteor.users.find();
+})
 Meteor.publish(null, function() {
   return Meteor.users.find({_id: this.userId}, {fields: {admin: 1}});
 });

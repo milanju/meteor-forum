@@ -1,0 +1,16 @@
+body {
+  background-color: #f5f5f5;
+}
+
+nav {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.brand-logo {
+  font-weight: lighter;
+}
+
+.forum-container {
+  padding: 10px;
+}

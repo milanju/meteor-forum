@@ -22,8 +22,8 @@ Template.adminForums.events({
       }
       if(this._id === forums[i]._id) {
         var firstPos = this.position;
-        Meteor.call("forumUpdate", forums[i]._id, {position: forums[i-1].position});
-        Meteor.call("forumUpdate", forums[i-1]._id, {position: firstPos});
+        Meteor.call("forumUpdate", forums[i]._id, {position: forums[i-1].position, sectionId: this.sectionId});
+        Meteor.call("forumUpdate", forums[i-1]._id, {position: firstPos, sectionId: this.sectionId});
       }
     }
   },
@@ -35,8 +35,8 @@ Template.adminForums.events({
       }
       if(this._id === forums[i]._id) {
         var firstPos = this.position;
-        Meteor.call("forumUpdate", forums[i]._id, {position: forums[i-1].position});
-        Meteor.call("forumUpdate", forums[i-1]._id, {position: firstPos});
+        Meteor.call("forumUpdate", forums[i]._id, {position: forums[i-1].position, sectionId: this.sectionId});
+        Meteor.call("forumUpdate", forums[i-1]._id, {position: firstPos, sectionId: this.sectionId});
       }
     }
   }

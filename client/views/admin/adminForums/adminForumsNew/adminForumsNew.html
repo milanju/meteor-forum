@@ -1,12 +1,20 @@
 <template name="adminForumsNew">
-  <form id="new-forum-form">
-    <select name="newForumSelect" id="new-forum-select">
-      {{#each sections}}
-        <option>{{this.title}}</option>
-      {{/each}}
-    </select>
-    <input type="text" name="newForumTitle" placeholder="forum title">
-    <input type="text" name="newForumDescription" placeholder="forum description">
-    <button type="submit">submit</button>
-  </form>
+  <div class="row">
+    <form id="new-forum-form" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <select name="newForumSelect" id="new-forum-select" class="browser-default">
+            {{#each sections}}
+              <option>{{this.title}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="inpuit-field col s12">
+          <input type="text" name="newForumTitle" placeholder="forum title">
+          <input type="text" name="newForumDescription" placeholder="forum description">
+          <button type="submit">submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </template>

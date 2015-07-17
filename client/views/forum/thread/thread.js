@@ -1,6 +1,11 @@
 Template.thread.helpers({
   posts: function() {
-    return Posts.find({threadId: this._id});
+    return Posts.find({threadId: this._id}, {sort: {date: 1}});
+  },
+  getForumTitle: function() {
+    if(Forums.findOne({_id: this.forumId})) {
+      return Forums.findOne({_id: this.forumId}).title;
+    }
   }
 });
 

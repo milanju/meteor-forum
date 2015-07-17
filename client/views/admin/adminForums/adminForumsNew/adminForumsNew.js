@@ -7,7 +7,7 @@ Template.adminForumsNew.helpers({
 Template.adminForumsNew.events({
   'submit #new-forum-form': function(event) {
     var title = event.target.newForumTitle.value;
-    var description = event.target.newForumTitle.value;
+    var description = event.target.newForumDescription.value;
     var sectionId = Sections.findOne({title: event.target.newForumSelect.value})._id;
 
     if(title != "" && description != "" && sectionId != "") {

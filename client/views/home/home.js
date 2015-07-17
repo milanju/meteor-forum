@@ -10,9 +10,9 @@ Template.home.helpers({
     }
   },
   sections: function() {
-    return Sections.find();
+    return Sections.find({}, {sort: {position: 1}});
   },
   forums: function(id) {
-    return Forums.find({sectionId: id});
+    return Forums.find({sectionId: id}, {sort: {position: 1}});
   }
 });

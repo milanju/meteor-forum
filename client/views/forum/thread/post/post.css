@@ -1,0 +1,30 @@
+.wrapper-td {
+  padding: 0;
+}
+
+.post-user-td {
+  border-radius: 0px;
+  width: 200px;
+  min-width: 200px;
+  padding-top: 6px;
+}
+
+.post-content-td {
+  border-radius: 0px;
+  width: 100%;
+  vertical-align: top;
+  padding-top: 6px;
+}
+
+.post-action-td {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.post-user-profile {
+  min-height: 150px;
+}
+
+.post-content {
+  height: 100%;
+}

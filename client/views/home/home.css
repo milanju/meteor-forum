@@ -1,0 +1,35 @@
+a {
+  color: #d50000;
+}
+
+.forum-table td {
+  border-bottom: solid 1px #bdbdbd;
+}
+.forum-head-card {
+  padding: 4px;
+  border-radius: 6px;
+  margin-bottom: 0px;
+}
+
+.forum-card {
+  padding: 0px;
+  border: solid 1px #212121;
+}
+
+.forum-table-head {
+  background-color: #242424;
+  color: #FFF;
+}
+
+.forum-table-th {
+  border-radius: 0px;
+}
+
+.table-header {
+  padding: 4px;
+  border-bottom: solid 2px #d50000;
+}
+
+.action-bar {
+  height: 60px;
+}

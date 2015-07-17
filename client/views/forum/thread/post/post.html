@@ -1,13 +1,25 @@
 <template name="post">
-  <table>
-    <tr>
-      <td>{{user.username}}</td>
-      <td>{{this.content}}</td>
-    </tr>
-    <tr>
-      <td>
-        <button class="edit-post">Edit Post</button>
-      </td>
-    </tr>
-  </table>
+  <tr>
+    <td class="wrapper-td">
+      <tr>
+        <td class="post-user-td grey lighten-3">
+          <div class="post-user-profile">
+            {{user.username}}
+          </div>
+        </td>
+        <td class="post-content-td grey lighten-4">
+          <div class="post-content">
+            {{this.content}}
+          </div>
+        </td>
+      </tr>
+    </td>
+  </tr>
+  <tr>
+    <td class="post-action-td grey lighten-2">
+      {{#if isAuthor}}
+        <button class="edit-post waves-effect waves-light btn">Edit Post</button>
+      {{/if}}
+    </td>
+  </tr>
 </template>

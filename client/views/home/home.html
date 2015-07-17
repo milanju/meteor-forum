@@ -1,32 +1,33 @@
 <template name="home">
-  {{> loginButtons}}
-  Home!<br>
-  Title: {{title}}<br>
-  Description: {{description}}
-
+  <div class="action-bar">
+    <div class="forum-nav">
+      <a href="/">Home</a>
+    </div>
+  </div>
   {{#each sections}}
-    <table>
-      <thead>
-        <tr>
-          <th>{{this.title}}</th>
-          <th>Threads</th>
-          <th>Posts</th>
-          <th>Last Post</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each forums this._id}}
-          <tr>
-            <td>
-              <a href="/forum/{{this._id}}">{{this.title}}</a><br>
-              {{this.description}}
-            </td>
-            <td>Threads</td>
-            <td>Posts</td>
-            <td>LastPost</td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <div class="card forum-card grey lighten-4">
+      <div class="table-header grey darken-4 grey-text text-lighten-2">
+        {{this.title}}
+      </div>
+      <table class="forum-table">
+        <tbody>
+          {{#each forums this._id}}
+            <tr>
+              <td>
+                <a href="/forum/{{this._id}}">{{this.title}}</a><br>
+                {{this.description}}
+              </td>
+              <td>
+                <div>{{this.threadCount}} {{rightForm "thread" this.threadCount}}</div>
+                <div>{{this.postCount}} {{rightForm "post" this.postCount}}</div>
+              </td>
+              <td>
+                <div></div>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
   {{/each}}
 </template>
