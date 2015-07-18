@@ -1,3 +1,7 @@
+Template.thread.onRendered(function () {
+  Meteor.call('incThreadViewCount', this.data._id);
+});
+
 Template.thread.helpers({
   posts: function() {
     return Posts.find({threadId: this._id}, {sort: {date: 1}});
