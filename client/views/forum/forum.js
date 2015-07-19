@@ -1,8 +1,4 @@
 Template.forum.helpers({
-  section: function() {
-    var sectionId = Forums.findOne({}).sectionId;
-    return Sections.findOne({_id: sectionId});
-  },
   forum: function() {
     return Forums.findOne();
   },

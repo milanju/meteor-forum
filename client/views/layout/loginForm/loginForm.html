@@ -1,12 +1,19 @@
 <template name="loginForm">
-  <div class="row">
-    <form id="login-form" class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" name="username">
-          <label for="username">username</label>
+  <div class="container">
+      <form id="login-form" class="white-text">
+        <div class="row">
+          <div class="input-field col s5">
+            <input type="text" name="username" id="username">
+            <label for="username" class="white-text">username</label>
+          </div>
+          <div class="input-field col s5 white-text">
+            <input type="password" name="password" id="password">
+            <label for="password" class="white-text">password</label>
+          </div>
+          <div class="input-field col s2">
+            <button type="submit" class="waves-effect waves-light btn">submit</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
   </div>
 </template>

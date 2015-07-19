@@ -1,0 +1,9 @@
+<template name="userDropdown">
+  Logged in as
+  <a href="" class="dropdown-button" data-activates="user-dropdown">{{currentUser.username}} ▾</a>
+  <ul id="user-dropdown" class="dropdown-content">
+    <li><a href="/user/{{currentUser.username}}">Profile</a></li>
+    <li class="divider"></li>
+    <li><a class="logout-button">Logout</a></li>
+  </ul>
+</template>
