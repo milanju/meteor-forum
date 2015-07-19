@@ -28,3 +28,8 @@
 .post-content {
   height: 100%;
 }
+
+.post-date {
+  font-size: 12px;
+  color: #616161;
+}

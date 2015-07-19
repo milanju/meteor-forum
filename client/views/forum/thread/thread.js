@@ -1,24 +1,25 @@
 Template.thread.onRendered(function () {
-  Meteor.call('incThreadViewCount', this.data._id);
+  Meteor.call('incThreadViewCount', Threads.findOne()._id);
 });
 
 Template.thread.helpers({
-  posts: function() {
-    return Posts.find({threadId: this._id}, {sort: {date: 1}});
+  forum: function() {
+    return Forums.findOne();
   },
-  getForumTitle: function() {
-    if(Forums.findOne({_id: this.forumId})) {
-      return Forums.findOne({_id: this.forumId}).title;
-    }
+  thread: function() {
+    return Threads.findOne();
+  },
+  posts: function() {
+    return Posts.find({}, {sort: {date: 1}});
   }
 });
 
 Template.thread.events({
-  'submit #quickreply-form': function(event) {
+  'submit #quickreply-form': function(event, template) {
     var content = event.target.content.value;
     var threadId = this._id;
 
-    if(content != "" && threadId != "") {
+    if(content != "" && threadId) {
       Meteor.call('postInsert', {content: content, threadId: threadId});
       event.target.content.value = "";
     }

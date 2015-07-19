@@ -1,24 +1,34 @@
 <template name="forum">
   <div class="action-bar">
     <div class="forum-nav">
-      <a href="/">Home</a> > <a href="{{this._id}}">{{this.title}}</a>
+      <a href="/">Home</a> > <a href="{{forum._id}}">{{forum.title}}</a>
     </div>
     <button class="new-thread waves-effect waves-light btn">New Thread</button>
   </div>
   <div class="card forum-card grey lighten-4">
     <div class="table-header grey darken-4 grey-text text-lighten-2">
-      {{this.title}}
+      {{forum.title}}
     </div>
     <table class="forum-table">
       <tbody>
         {{#each threads}}
           <tr>
-            <td><a href="/forum/{{../_id}}/{{this._id}}">{{this.title}}</a></td>
             <td>
-              {{this.postCount}} {{rightForm "post" this.postCount}}<br>
-              {{this.viewCount}} {{rightForm "view" this.viewCount}}
+              <div><a href="/forum/{{forum._id}}/{{this._id}}">{{this.title}}</a></div>
+              <div class="thread-info">Started by {{author}}, {{formatDate this.date}}</div>
             </td>
-            <td>{{this.lastPost}}</td>
+            <td>
+              <div class="thread-info">{{this.postCount}} {{rightForm "post" this.postCount}}</div>
+              <div class="thread-info">{{this.viewCount}} {{rightForm "view" this.viewCount}}</div>
+            </td>
+            <td>
+              {{#if lastPostExists}}
+                <div>{{this.lastPostAuthor}}</div>
+                <div class="thread-info">{{formatDate this.lastPostDate}}</div>
+              {{else}}
+                <div class="thread-info">none</div>
+              {{/if}}
+            </td>
           </tr>
         {{/each}}
       </tbody>

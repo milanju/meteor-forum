@@ -1,11 +1,25 @@
 Template.forum.helpers({
+  section: function() {
+    var sectionId = Forums.findOne({}).sectionId;
+    return Sections.findOne({_id: sectionId});
+  },
+  forum: function() {
+    return Forums.findOne();
+  },
   threads: function() {
-    return Threads.find({forumId: this._id}, {sort: {date: -1}});
+    return Threads.find({}, {sort: {lastPostDate: -1}});
+  },
+  author: function() {
+    return Meteor.users.findOne({_id: this.userId}).username;
+  },
+  lastPostExists: function() {
+    if(this.lastPost != "none") return true;
+    else return false;
   }
 });
 
 Template.forum.events({
   'click .new-thread': function() {
-    Router.go('/forum/' + this._id + '/new');
+    Router.go('/forum/' + Forums.findOne()._id + '/new');
   }
 });

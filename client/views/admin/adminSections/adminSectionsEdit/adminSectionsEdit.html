@@ -1,10 +1,12 @@
 <template name="adminSectionsEdit">
-  <br>
-  Edit Section<br>
-  {{title}}, {{description}}
-  <form id="section-edit-form">
-    <input type="text" name="sectionEditTitle" value="{{title}}">
-    <input type="text" name="sectionEditDescription" value="{{description}}">
-    <button type="submit">Submit</button>
-  </form>
+  {{#with section}}
+    <br>
+    Edit Section<br>
+    {{title}}, {{description}}
+    <form id="section-edit-form">
+      <input type="text" name="sectionEditTitle" value="{{title}}">
+      <input type="text" name="sectionEditDescription" value="{{description}}">
+      <button type="submit">Submit</button>
+    </form>
+  {{/with}}
 </template>

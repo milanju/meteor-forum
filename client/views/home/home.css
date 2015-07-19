@@ -33,3 +33,22 @@ a {
 .action-bar {
   height: 60px;
 }
+
+.home-last-post-date {
+  font-size: 12px;
+  color: #616161;
+}
+
+.home-last-post-td {
+  width: 220px;
+}
+
+.home-count-td {
+  width: 100px;
+  font-size: 13px;
+  color: #616161;
+}
+
+.home-forum-description {
+  font-size: 13px;
+}

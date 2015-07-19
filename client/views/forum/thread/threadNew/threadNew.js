@@ -1,3 +1,9 @@
+Template.threadNew.helpers({
+  forum: function() {
+    return Forums.findOne();
+  }
+});
+
 Template.threadNew.events({
   'submit #new-thread-form': function(event) {
     var forumId = this._id;

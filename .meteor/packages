@@ -10,3 +10,5 @@ iron:router
 accounts-ui
 less
 materialize:materialize
+mrt:moment
+meteorhacks:subs-manager

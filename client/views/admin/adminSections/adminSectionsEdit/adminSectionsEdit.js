@@ -1,3 +1,9 @@
+Template.adminSectionsEdit.helpers({
+  section: function() {
+    return Sections.findOne();
+  }
+});
+
 Template.adminSectionsEdit.events({
   'submit #section-edit-form': function(event) {
     var title = event.target.sectionEditTitle.value;

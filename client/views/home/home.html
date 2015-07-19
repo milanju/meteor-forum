@@ -15,14 +15,15 @@
             <tr>
               <td>
                 <a href="/forum/{{this._id}}">{{this.title}}</a><br>
-                {{this.description}}
+                <div class="home-forum-description">{{this.description}}</div>
               </td>
-              <td>
+              <td class="home-count-td">
                 <div>{{this.threadCount}} {{rightForm "thread" this.threadCount}}</div>
                 <div>{{this.postCount}} {{rightForm "post" this.postCount}}</div>
               </td>
-              <td>
-                <div></div>
+              <td class="home-last-post-td">
+                <div>{{this.lastPost.threadTitle}}</div>
+                <div class="home-last-post-date">{{formatDate this.lastPostDate}}, by {{this.lastPostAuthor}}</div>
               </td>
             </tr>
           {{/each}}

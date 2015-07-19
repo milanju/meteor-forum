@@ -9,7 +9,15 @@
         </td>
         <td class="post-content-td grey lighten-4">
           <div class="post-content">
-            {{this.content}}
+            <div class="post-date">{{formatDatePost this.date}}</div>
+            {{#if edit}}
+              <form id="edit-post-form">
+                <textarea type="text" name="content" class="materialize-textarea" value="{{this.content}}"></textarea>
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+              </form>
+            {{else}}
+              {{this.content}}
+            {{/if}}
           </div>
         </td>
       </tr>
@@ -18,7 +26,10 @@
   <tr>
     <td class="post-action-td grey lighten-2">
       {{#if isAuthor}}
+        {{#if edit}}
+        {{else}}
         <button class="edit-post waves-effect waves-light btn">Edit Post</button>
+        {{/if}}
       {{/if}}
     </td>
   </tr>

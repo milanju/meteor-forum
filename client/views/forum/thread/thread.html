@@ -1,12 +1,13 @@
 <template name="thread">
+  {{#with thread}}
   <div class="action-bar">
     <div class="forum-nav">
-      <a href="/">Home</a> > <a href="/forum/{{this.forumId}}">{{getForumTitle}}</a> > <a href="{{this._id}}">{{this.title}}</a>
+      <a href="/">Home</a> > <a href="/forum/{{forum._id}}">{{forum.title}}</a> > <a href="{{thread._id}}">{{thread.title}}</a>
     </div>
   </div>
   <div class="card forum-card">
     <div class="table-header grey darken-4 grey-text text-lighten-2">
-      {{this.title}}
+      {{forum.title}}
     </div>
     <table class="post-table">
       <tbody>
@@ -24,4 +25,5 @@
       </form>
     </div>
   </div>
+  {{/with}}
 </template>

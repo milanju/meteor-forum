@@ -5,6 +5,9 @@ Template.adminForumsEdit.helpers({
   currentSection: function(id) {
     if(this._id === id) return true;
     else return false;
+  },
+  forum: function() {
+    return Forums.findOne();
   }
 });
 
