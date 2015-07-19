@@ -3,7 +3,9 @@
     <div class="forum-nav">
       <a href="/">Home</a> > <a href="{{forum._id}}">{{forum.title}}</a>
     </div>
-    <button class="new-thread waves-effect waves-light btn">New Thread</button>
+    {{#if currentUser}}
+      <button class="new-thread waves-effect waves-light btn">New Thread</button>
+    {{/if}}
   </div>
   <div class="card forum-card grey lighten-4">
     <div class="table-header grey darken-4 grey-text text-lighten-2">
@@ -15,7 +17,7 @@
           <tr>
             <td>
               <div><a href="/forum/{{forum._id}}/{{this._id}}">{{this.title}}</a></div>
-              <div class="thread-info">Started by {{author}}, {{formatDate this.date}}</div>
+              <div class="thread-info">Started by <a href="/user/{{author}}">{{author}}</a>, {{formatDate this.date}}</div>
             </td>
             <td>
               <div class="thread-info">{{this.postCount}} {{rightForm "post" this.postCount}}</div>
@@ -23,7 +25,7 @@
             </td>
             <td>
               {{#if lastPostExists}}
-                <div>{{this.lastPostAuthor}}</div>
+                <div><a href="/user/{{this.lastPostAuthor}}">{{this.lastPostAuthor}}</a></div>
                 <div class="thread-info">{{formatDate this.lastPostDate}}</div>
               {{else}}
                 <div class="thread-info">none</div>

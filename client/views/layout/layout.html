@@ -14,7 +14,25 @@
             <li><a href="#">Navbar Link</a></li>
           </ul>-->
         </nav>
-        <div class="card">
+        <div class="card login-register-card">
+          <div class="login-register-container">
+            <div class="row">
+              <div class="col s6">
+                <button id="login-button" class="col s12 waves-effect waves-light btn">Login</button>
+              </div>
+              <div class="col s6">
+              <button id="register-button" class="col s12 waves-effect waves-light btn">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="login-panel" class="card blue-grey">
+          {{> loginForm}}
+        </div>
+        <div id="register-panel" class="card blue-grey">
+          {{> registerForm}}
+        </div>
+        <div class="card forum-container-card">
           <div class="forum-container">
             <div>{{> loginButtons}}</div>
             {{> yield}}

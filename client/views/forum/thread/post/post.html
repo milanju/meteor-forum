@@ -4,7 +4,8 @@
       <tr>
         <td class="post-user-td grey lighten-3">
           <div class="post-user-profile">
-            {{user.username}}
+            <div>{{user.username}}</div>
+            <div>Posts: {{user.posts}}</div>
           </div>
         </td>
         <td class="post-content-td grey lighten-4">
@@ -25,10 +26,12 @@
   </tr>
   <tr>
     <td class="post-action-td grey lighten-2">
-      {{#if isAuthor}}
-        {{#if edit}}
-        {{else}}
-        <button class="edit-post waves-effect waves-light btn">Edit Post</button>
+      {{#if currentUser}}
+        {{#if isAuthor}}
+          {{#if edit}}
+          {{else}}
+          <button class="edit-post waves-effect waves-light btn">Edit Post</button>
+          {{/if}}
         {{/if}}
       {{/if}}
     </td>

@@ -18,3 +18,29 @@ nav {
 .forum-container {
   padding: 10px;
 }
+
+#login-panel {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: none;
+}
+
+#register-panel {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: none;
+}
+
+.forum-container-card {
+  margin-top: 0;
+}
+
+.login-register-card {
+  margin-bottom: 0;
+  padding: 0px;
+}
+
+.login-register-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -22,8 +22,11 @@
                 <div>{{this.postCount}} {{rightForm "post" this.postCount}}</div>
               </td>
               <td class="home-last-post-td">
-                <div>{{this.lastPost.threadTitle}}</div>
-                <div class="home-last-post-date">{{formatDate this.lastPostDate}}, by {{this.lastPostAuthor}}</div>
+                <div><a href="/forum/{{this._id}}/{{this.lastPostThreadId}}">{{this.lastPostThreadTitle}}</a></div>
+                <div class="home-last-post-date">
+                  {{formatDate this.lastPostDate}}, by
+                  <a href="/user/{{this.lastPostAuthor}}">{{this.lastPostAuthor}}</a>
+                </div>
               </td>
             </tr>
           {{/each}}

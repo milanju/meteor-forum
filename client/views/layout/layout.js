@@ -7,3 +7,12 @@ Template.layout.helpers({
     return System.findOne();
   }
 });
+
+Template.layout.events({
+  'click #login-button': function() {
+    $("#login-panel").slideToggle(200,"linear");
+  },
+  'click #register-button': function() {
+    $("#register-panel").slideToggle(200,"linear");
+  }
+});
