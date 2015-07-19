@@ -7,6 +7,12 @@ Template.registerForm.events({
       Accounts.createUser({
         username: username,
         password: password
+      }, function(error) {
+        if(error) {
+
+        } else {
+          Session.set("register-panel-toggle", false);
+        }
       });
     }
     return false;
