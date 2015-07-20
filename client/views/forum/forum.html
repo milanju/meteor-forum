@@ -1,12 +1,10 @@
 <template name="forum">
-  <div class="action-bar">
-    <div class="forum-nav">
-      <a href="/">Home</a> > <a href="{{forum._id}}">{{forum.title}}</a>
-    </div>
-    {{#if currentUser}}
-      <button class="new-thread waves-effect waves-light btn">New Thread</button>
-    {{/if}}
+  <div class="forum-nav">
+    <a href="/">Home</a> > <a href="{{forum._id}}">{{forum.title}}</a>
   </div>
+  {{#if currentUser}}
+    <button class="new-thread waves-effect waves-light btn">New Thread</button>
+  {{/if}}
   <div class="card forum-card grey lighten-4">
     <div class="table-header grey darken-4 grey-text text-lighten-2">
       {{forum.title}}

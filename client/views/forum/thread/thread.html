@@ -1,31 +1,29 @@
 <template name="thread">
   {{#with thread}}
-  <div class="action-bar">
     <div class="forum-nav">
       <a href="/">Home</a> > <a href="/forum/{{forum._id}}">{{forum.title}}</a> > <a href="{{thread._id}}">{{thread.title}}</a>
     </div>
-  </div>
-  <div class="card forum-card">
-    <div class="table-header grey darken-4 grey-text text-lighten-2">
-      {{forum.title}}
+    <div class="card forum-card">
+      <div class="table-header grey darken-4 grey-text text-lighten-2">
+        {{forum.title}}
+      </div>
+      <table class="post-table">
+        <tbody>
+          {{#each posts}}
+            {{> post}}
+          {{/each}}
+        </tbody>
+      </table>
     </div>
-    <table class="post-table">
-      <tbody>
-        {{#each posts}}
-          {{> post}}
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-  {{#if currentUser}}
-  <div class="card blue-grey darken-3">
-    <div class="card-content">
-      <form id="quickreply-form">
-        <textarea type="text" name="content" class="materialize-textarea blue-grey darken-2 white-text"></textarea>
-        <button type="submit" class="waves-effect waves-light btn">Submit</button>
-      </form>
+    {{#if currentUser}}
+    <div class="card blue-grey darken-3">
+      <div class="card-content">
+        <form id="quickreply-form">
+          <textarea type="text" name="content" class="materialize-textarea blue-grey darken-2 white-text"></textarea>
+          <button type="submit" class="waves-effect waves-light btn">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
-  {{/if}}
+    {{/if}}
   {{/with}}
 </template>
