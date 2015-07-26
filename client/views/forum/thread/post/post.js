@@ -19,6 +19,9 @@ Template.post.events({
   'click .edit-post': function(event) {
     Session.set(this._id, "edit");
   },
+  'click .delete-post': function() {
+    Meteor.call('postRemove', this._id);
+  },
   'submit #edit-post-form': function(event) {
     var content = event.target.content.value;
     var postId = this._id;
