@@ -4,7 +4,7 @@
       <tr>
         <td class="post-user-td grey lighten-3">
           <div class="post-user-profile">
-            <div><a href="/user/{{user.username}}">{{user.username}}</a></div>
+            <div><a href="/users/{{user.username}}">{{user.username}}</a></div>
             <div>Posts: {{user.posts}}</div>
           </div>
         </td>
@@ -34,7 +34,11 @@
           {{/if}}
         {{/if}}
         {{#if isAdmin}}
-          <button class="delete-post waves-effect waves-light btn right">Delete Post</button>
+          {{#if this.root}}
+            <button class="delete-thread waves-effect waves-light btn right">Delete Thread</button>
+          {{else}}
+            <button class="delete-post waves-effect waves-light btn right">Delete Post</button>
+          {{/if}}
         {{/if}}
       {{/if}}
     </td>

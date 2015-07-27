@@ -10,6 +10,7 @@ blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
 check@1.0.5
+coffeescript@1.0.6
 ddp@1.1.0
 deps@1.0.7
 ejson@1.0.6
@@ -45,6 +46,7 @@ minimongo@1.0.8
 mobile-status-bar@1.0.3
 mongo@1.1.0
 mrt:moment@2.8.1
+natestrauser:animate-css@3.2.6
 npm-bcrypt@0.7.8_2
 observe-sequence@1.0.6
 ordered-dict@1.0.3
@@ -61,6 +63,7 @@ spacebars@1.0.6
 spacebars-compiler@1.0.6
 srp@1.0.3
 templating@1.1.1
+todda00:friendly-slugs@0.3.3
 tracker@1.0.7
 ui@1.0.6
 underscore@1.0.3

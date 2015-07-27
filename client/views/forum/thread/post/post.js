@@ -20,7 +20,22 @@ Template.post.events({
     Session.set(this._id, "edit");
   },
   'click .delete-post': function() {
-    Meteor.call('postRemove', this._id);
+    Meteor.call('postRemove', this._id, function(error, result) {
+      if(!error) {
+        Materialize.toast('Post Deleted!', 3000);
+      }
+    });
+  },
+  'click .delete-thread': function() {
+    var threadId = this.threadId;
+    var forumId = this.forumId;
+
+    Meteor.call('threadRemove', threadId, function(error, result) {
+      if(!error) {
+        Materialize.toast('Thread Deleted!', 3000);
+        Router.go("/forum/" + Router.current().params.forumSlug);
+      }
+    })
   },
   'submit #edit-post-form': function(event) {
     var content = event.target.content.value;

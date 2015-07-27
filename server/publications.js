@@ -25,3 +25,8 @@ Meteor.publish('threads', function(params) {
 Meteor.publish('posts', function(params) {
   return Posts.find(params);
 })
+
+Meteor.publish('postsBySlug', function(params) {
+  var threadId = Threads.findOne({slug: params.slug})._id;
+  return Posts.find({threadId: threadId});
+})

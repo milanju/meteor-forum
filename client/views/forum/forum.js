@@ -16,6 +16,6 @@ Template.forum.helpers({
 
 Template.forum.events({
   'click .new-thread': function() {
-    Router.go('/forum/' + Forums.findOne()._id + '/new');
+    Router.go('/forum/' + Forums.findOne().slug + '/new');
   }
 });

@@ -1,7 +1,4 @@
 <template name="home">
-  <div class="forum-nav">
-    <a href="/">Home</a>
-  </div>
   {{#each sections}}
     <div class="card forum-card grey lighten-4">
       <div class="table-header grey darken-4 grey-text text-lighten-2">
@@ -12,7 +9,7 @@
           {{#each forums this._id}}
             <tr>
               <td>
-                <a href="/forum/{{this._id}}">{{this.title}}</a><br>
+                <a href="/forum/{{this.slug}}">{{this.title}}</a><br>
                 <div class="home-forum-description">{{this.description}}</div>
               </td>
               <td class="home-count-td">
@@ -20,11 +17,15 @@
                 <div>{{this.postCount}} {{rightForm "post" this.postCount}}</div>
               </td>
               <td class="home-last-post-td">
-                <div><a href="/forum/{{this._id}}/{{this.lastPostThreadId}}">{{this.lastPostThreadTitle}}</a></div>
+                {{#if this.lastPostThreadId}}
+                <div><a href="/forum/{{this.slug}}/{{this.lastPostThreadId}}">{{this.lastPostThreadTitle}}</a></div>
                 <div class="home-last-post-date">
                   {{formatDate this.lastPostDate}}, by
-                  <a href="/user/{{this.lastPostAuthor}}">{{this.lastPostAuthor}}</a>
+                  <a href="/users/{{this.lastPostAuthor}}">{{this.lastPostAuthor}}</a>
                 </div>
+                {{else}}
+                  None
+                {{/if}}
               </td>
             </tr>
           {{/each}}
