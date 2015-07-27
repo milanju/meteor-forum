@@ -1,0 +1,9 @@
+<template name="breadcrumbNav">
+  {{#each breadcrumbs}}
+    {{#if firstCrumb}}
+    {{else}}
+     >
+    {{/if}}
+    <a href="{{this.url}}">{{this.name}}</a>
+  {{/each}}
+</template>
