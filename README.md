@@ -1,7 +1,7 @@
 # Meteor Forum
 Meteor Forum is a forum software built using the Meteor platform.
 You can view it as a competitor to software such as MyBB/vBulletin/PHPBB.
-This software is currently in pre alpha development stage, you might catch a demo running live at mforums.meteor.com
+This software is currently in pre alpha development stage, you might catch a demo running live at http://mforums.meteor.com/
 
 # todo:
 1. show currently online users
