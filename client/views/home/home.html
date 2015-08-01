@@ -18,7 +18,7 @@
               </td>
               <td class="home-last-post-td">
                 {{#if this.lastPostThreadId}}
-                <div><a href="/forum/{{this.slug}}/{{this.lastPostThreadId}}">{{this.lastPostThreadTitle}}</a></div>
+                <div><a href="/forum/{{this.slug}}/{{this.lastPostThreadSlug}}">{{this.lastPostThreadTitle}}</a></div>
                 <div class="home-last-post-date">
                   {{formatDate this.lastPostDate}}, by
                   <a href="/users/{{this.lastPostAuthor}}">{{this.lastPostAuthor}}</a>

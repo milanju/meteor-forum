@@ -21,22 +21,38 @@ Template.breadcrumbNav.helpers({
     });
     if(params.forumSlug) {
       var forum = Forums.findOne({slug: params.forumSlug});
-      crumbs.push({
-        name: forum.title,
-        url: "/forum/" + params.forumSlug
-      });
+      if(forum) {
+        crumbs.push({
+          name: forum.title,
+          url: "/forum/" + params.forumSlug
+        });
+      }
       if(params.threadSlug) {
         var thread = Threads.findOne({slug: params.threadSlug});
-        crumbs.push({
-          name: thread.title,
-          url: "/forum/" + params.forumSlug + "/" + params.threadSlug
-        });
+        if(thread) {
+          crumbs.push({
+            name: thread.title,
+            url: "/forum/" + params.forumSlug + "/" + params.threadSlug
+          });
+        }
       } else if(newThread()) {
         crumbs.push({
           name: "New Thread",
           url: "/forum/" + params.forumSlug + "/new"
         });
       } else {
+      }
+    } else if(Iron.Location.get().path.split("/")[1] === "users") {
+      crumbs.push({
+        name: "Users",
+        url: "/users/"
+      });
+      var username = Router.current().params.username;
+      if(username) {
+        crumbs.push({
+          name: username,
+          url: "/users/" + username
+        })
       }
     }
     return crumbs;

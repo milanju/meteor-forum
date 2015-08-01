@@ -9,6 +9,8 @@ Template.threadNew.events({
     var title = event.target.title.value;
     var content = event.target.content.value;
     var forumSlug = this.slug;
+    console.log(title);
+    console.log(forumSlug);
     if(this._id != "" && title != "" && content != "") {
       Meteor.call('threadInsert', {forumId: this._id, title: title, content: content}, function(error, result) {
         var threadSlug = result;
